@@ -1,0 +1,36 @@
+{
+  "name": "neopixels-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "android": "webpack --mode development && npx cap sync android & npx cap open android",
+    "sync": "npx cap sync"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@capacitor-community/bluetooth-le": "^1.6.0",
+    "@capacitor/android": "^3.3.3",
+    "@capacitor/core": "^3.3.3",
+    "history-api": "^1.0.1",
+    "path-to-regexp": "^6.2.0",
+    "universal-router": "^9.1.0",
+    "url": "^0.11.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^3.3.3",
+    "babel-loader": "^8.2.3",
+    "copy-webpack-plugin": "^10.2.0",
+    "css-loader": "^6.5.1",
+    "html-webpack-plugin": "^5.5.0",
+    "serve": "^13.0.2",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1"
+  }
+}

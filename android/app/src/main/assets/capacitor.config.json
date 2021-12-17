@@ -1,0 +1,7 @@
+{
+	"appId": "led.zyphox.com",
+	"appName": "ZyPhox LED Controller",
+	"webDir": "dist",
+	"bundledWebRuntime": false,
+	"loggingBehavior": "debug"
+}
