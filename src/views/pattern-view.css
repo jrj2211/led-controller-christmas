@@ -1,0 +1,65 @@
+pattern-view {
+  background: #232323;
+  border-radius: 25px;
+  display: flex;
+  height: 100%;
+  max-height: 100%;
+  overflow: auto;
+  flex-direction: column;
+}
+
+pattern-view .header {
+  background: #303030;
+  padding:15px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 15px;
+}
+
+pattern-view .steps {
+  flex-grow: 1;
+}
+
+pattern-view .steps .step {
+  display: flex;
+  align-items: center;
+}
+
+
+pattern-view .header .button {
+  padding: 15px 25px;
+}
+
+pattern-view .steps:empty:before {
+  content: 'No steps added to pattern\A Click add to begin';
+  padding:40px;
+  text-align: center;
+  white-space: pre-wrap;
+  display: block;
+}
+
+
+pattern-view .step {
+  display: flex;
+  padding: 15px;
+  border-bottom: 1px solid rgba(255,255,255,.1);
+}
+
+pattern-view .step ion-icon{
+  margin-right: 10px;
+  color: rgba(255,255,255,.6);
+  font-size: 1.2em;
+}
+
+pattern-view .step .colors {
+  height: 20px;
+  border-radius: 5px;
+  display: flex;
+  overflow: hidden;
+  margin-left: auto;
+}
+
+pattern-view .step .colors > * {
+  flex-grow: 1;
+  width: 20px;
+}

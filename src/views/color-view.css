@@ -1,0 +1,71 @@
+color-view .color-wheel {
+  width: 85%;
+  background: url('assets/png/color-wheel-gradient.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+color-view .color-wheel::before {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+
+color-view .color-wheel .selected {
+  content: '';
+  width: calc(32.5% - 15px);
+  height: calc(32.5% - 15px);
+  border-radius: 100%;
+  position: absolute;
+  box-sizing: border-box;
+}
+
+color-view .input_label {
+  color: rgba(255,255,255,.5);
+  text-align: center;
+  margin-top:30px;
+  margin-bottom:10px;
+}
+
+
+color-view .input_row {
+  display: flex;
+}
+
+
+color-view ion-icon {
+  font-size: 2em;
+  margin: 0px 15px;
+  color: rgba(255,255,255, .8);
+}
+
+
+/* Special styling for WebKit/Blink */
+color-view input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 2px solid white;
+  box-sizing: border-box;
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  background: var(--color);
+  cursor: pointer;
+  box-sizing: border-box;
+  margin-top: -7px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+}
+
+
+color-view input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 15px;
+  cursor: pointer;
+  background: linear-gradient(90deg, black, var(--color-bright));
+  border-radius: 100px;
+}

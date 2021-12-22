@@ -19,6 +19,10 @@ export default {
     new CopyPlugin({
       patterns: [
         {
+          from: path.resolve(dirname, 'node_modules/ionicons/dist/svg/'),
+          to: path.resolve(dirname, 'dist/svg/ionicons/'),
+        },
+        {
           from: './src/assets',
           noErrorOnMissing: true
         },
@@ -49,4 +53,11 @@ export default {
   },
   ignoreWarnings: [/Failed to parse source map/],
   stats: 'minimal',
+  devServer: {
+    static: {
+      directory: path.join(dirname, 'dist'),
+    },
+    compress: true,
+    port: 9000,
+  },
 };

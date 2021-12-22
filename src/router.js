@@ -17,7 +17,6 @@ export default class Router extends UniversalRouter {
 
   async render(location) {
     const html = await this.resolve(location || '/');
-    console.log(html);
     document.body.innerHTML = '';
     document.body.append(html);
   }

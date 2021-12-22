@@ -1,0 +1,27 @@
+scan-result {
+  padding: 15px 30px;
+  display: block;
+  display: flex;
+  align-items: center;
+  font-size: 1.125em;
+  max-width: 100%;
+}
+
+scan-result .name {
+  flex-grow: 1;
+  text-overflow: ellipsis;
+}
+
+scan-result .rssi {
+  opacity: .5;
+  margin: 0 10px;
+  font-size: .9em;
+}
+
+scan-result:active {
+  background: rgba(255,255,255,.07);
+}
+
+scan-result:hover {
+  background: rgba(255,255,255,.1);
+}

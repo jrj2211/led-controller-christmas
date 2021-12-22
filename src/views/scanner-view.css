@@ -1,0 +1,106 @@
+scanner-view .list {
+  height: 100%;
+  max-height: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+scanner-view content {
+  padding: 2px 15px 15px 15px;
+}
+
+scanner-view .spinner {
+  --border-color: var(--accent-5);
+  --spinner-border-width: 5px;
+  --spinner-size: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+}
+
+scanner-view .results {
+  flex-grow: 1;
+  padding-top:15px;
+}
+
+scanner-view .results:empty:after {
+  content: 'No devices found.';
+  opacity: .6;
+  text-align: center;
+  display: block;
+  padding:35px;
+}
+
+scanner-view[state=scanning] .results:empty:after {
+  content: 'No devices found yet...';
+}
+
+scanner-view .state {
+  padding: 35px;
+}
+
+scanner-view .msg {
+  margin:10px 25px 15px 25px;
+}
+
+scanner-view[state=scanning] .state {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 35px 10px;
+  text-align: center;
+}
+
+scanner-view .state .hr {
+  border-top: 2px solid rgba(255,255,255,.09);
+  margin: 0 25px;
+  height:0;
+  margin-bottom: 35px;
+  box-sizing: border-box;
+}
+
+scanner-view .state .text {
+  font-size: 1.1em;
+  text-transform: uppercase;
+  opacity: .8;
+}
+
+scanner-view .results scan-result:not(:last-child) {
+  border-bottom: 1px solid rgba(255,255,255,.05);
+}
+
+scanner-view .connection {
+  display: none;
+}
+
+scanner-view .connection .name {
+  font-size: 1.5rem;
+}
+
+scanner-view .connection .name::before {
+  display: block;
+  margin-bottom: 3px;
+  content: 'Connecting To';
+  text-transform: uppercase;
+  opacity: .75;
+  font-size: 1rem;
+}
+
+scanner-view[state=connecting] .connection {
+  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  top:35px;
+  right:10px;
+  bottom: 35px;
+  flex-grow: 1;
+}
+
+scanner-view[state=connecting] .state,
+scanner-view[state=connecting] .results {
+  display: none;
+}

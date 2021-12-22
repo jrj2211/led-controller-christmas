@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="star_1_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 298.4 283.8" enable-background="new 0 0 298.4 283.8" xml:space="preserve">
+<path id="outline" fill="#FFFFFF" d="M294.4,108.4h-110l-34-104.6c-0.4-1.2-2.1-1.2-2.5,0l-34,104.6H4c-1.3,0-1.8,1.6-0.8,2.3
+	l89,64.7L58.2,280c-0.4,1.2,1,2.2,2,1.4l89-64.7l89,64.7c1,0.7,2.4-0.3,2-1.4l-34-104.6l89-64.7C296.2,110,295.7,108.4,294.4,108.4z
+	 M209.5,239.9l-60.3-43.8l-60.3,43.8l23-70.9l-60.3-43.8h74.5l23-70.9l23,70.9h74.5L186.5,169L209.5,239.9z"/>
+<g id="leds">
+	
+		<rect id="led_47" x="162.2" y="214.7" transform="matrix(0.5878 -0.809 0.809 0.5878 -109.0945 228.4329)" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="14.8" height="13.2"/>
+	
+		<rect id="led_46" x="172.9" y="222.4" transform="matrix(0.5878 -0.809 0.809 0.5878 -110.9732 240.2943)" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="14.8" height="13.2"/>
+	
+		<rect id="led_45" x="183.6" y="230.2" transform="matrix(0.5878 -0.809 0.809 0.5878 -112.8518 252.1557)" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="14.8" height="13.2"/>
+	
+		<rect id="led_44" x="194.3" y="238" transform="matrix(0.5878 -0.809 0.809 0.5878 -114.7305 264.0172)" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="14.8" height="13.2"/>
+	
+		<rect id="led_43" x="209" y="227.3" transform="matrix(0.9511 -0.309 0.309 0.9511 -61.6956 78.3205)" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="14.8" height="13.2"/>
+	
+		<rect id="led_42" x="204.9" y="214.7" transform="matrix(0.9511 -0.309 0.309 0.9511 -58.0085 76.4418)" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="14.8" height="13.2"/>
+	
+		<rect id="led_41" x="200.8" y="202.2" transform="matrix(0.9511 -0.309 0.309 0.9511 -54.3214 74.5632)" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="14.8" height="13.2"/>
+	
+		<rect id="led_40" x="196.7" y="189.6" transform="matrix(0.9511 -0.309 0.309 0.9511 -50.6343 72.6845)" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="14.8" height="13.2"/>
+	
+		<rect id="led_39" x="192.7" y="177" transform="matrix(0.9511 -0.309 0.309 0.9511 -46.9472 70.8058)" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="14.8" height="13.2"/>
+	
+		<rect id="led_38" x="199.4" y="157.8" transform="matrix(0.809 -0.5878 0.5878 0.809 -57.7316 152.6537)" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="13.2" height="14.8"/>
+	
+		<rect id="led_37" x="210.1" y="150" transform="matrix(0.809 -0.5878 0.5878 0.809 -51.1184 157.4584)" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="13.2" height="14.8"/>
+	
+		<rect id="led_36" x="220.8" y="142.2" transform="matrix(0.809 -0.5878 0.5878 0.809 -44.5052 162.2632)" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="13.2" height="14.8"/>
+	
+		<rect id="led_35" x="231.5" y="134.5" transform="matrix(0.809 -0.5878 0.5878 0.809 -37.8921 167.0679)" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="13.2" height="14.8"/>
+	
+		<rect id="led_34" x="242.2" y="126.7" transform="matrix(0.809 -0.5878 0.5878 0.809 -31.2789 171.8727)" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="13.2" height="14.8"/>
+	
+		<rect id="led_33" x="236.6" y="109.4" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="13.2" height="14.8"/>
+	
+		<rect id="led_32" x="223.4" y="109.4" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="13.2" height="14.8"/>
+	
+		<rect id="led_31" x="210.2" y="109.4" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="13.2" height="14.8"/>
+	
+		<rect id="led_30" x="196.9" y="109.4" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="13.2" height="14.8"/>
+	
+		<rect id="led_29" x="183.7" y="109.4" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="13.2" height="14.8"/>
+	
+		<rect id="led_28" x="167.2" y="98.8" transform="matrix(0.9511 -0.309 0.309 0.9511 -24.0256 59.1267)" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="14.8" height="13.2"/>
+	
+		<rect id="led_27" x="163.2" y="86.2" transform="matrix(0.9511 -0.309 0.309 0.9511 -20.3385 57.248)" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="14.8" height="13.2"/>
+	
+		<rect id="led_26" x="159.1" y="73.6" transform="matrix(0.9511 -0.309 0.309 0.9511 -16.6514 55.3693)" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="14.8" height="13.2"/>
+	
+		<rect id="led_25" x="155" y="61.1" transform="matrix(0.9511 -0.309 0.309 0.9511 -12.9643 53.4907)" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="14.8" height="13.2"/>
+	
+		<rect id="led_24" x="150.9" y="48.5" transform="matrix(0.9511 -0.309 0.309 0.9511 -9.2772 51.612)" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="14.8" height="13.2"/>
+	
+		<rect id="led_23" x="133.5" y="47.7" transform="matrix(0.309 -0.9511 0.9511 0.309 44.4402 171.3527)" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="13.2" height="14.8"/>
+	
+		<rect id="led_22" x="129.4" y="60.3" transform="matrix(0.309 -0.9511 0.9511 0.309 29.6527 176.1575)" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="13.2" height="14.8"/>
+	
+		<rect id="led_21" x="125.4" y="72.9" transform="matrix(0.309 -0.9511 0.9511 0.309 14.8652 180.9622)" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="13.2" height="14.8"/>
+	
+		<rect id="led_20" x="121.3" y="85.4" transform="matrix(0.309 -0.9511 0.9511 0.309 7.765244e-02 185.767)" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="13.2" height="14.8"/>
+	
+		<rect id="led_19" x="117.2" y="98" transform="matrix(0.309 -0.9511 0.9511 0.309 -14.7099 190.5717)" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="13.2" height="14.8"/>
+	
+		<rect id="led_18" x="101.5" y="109.4" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="13.2" height="14.8"/>
+	
+		<rect id="led_17" x="88.3" y="109.4" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="13.2" height="14.8"/>
+	
+		<rect id="led_16" x="75" y="109.4" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="13.2" height="14.8"/>
+	
+		<rect id="led_15" x="61.8" y="109.4" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="13.2" height="14.8"/>
+	
+		<rect id="led_14" x="48.6" y="109.4" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="13.2" height="14.8"/>
+	
+		<rect id="led_13" x="42.2" y="127.5" transform="matrix(0.5878 -0.809 0.809 0.5878 -88.022 95.3863)" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="14.8" height="13.2"/>
+	
+		<rect id="led_12" x="52.9" y="135.2" transform="matrix(0.5878 -0.809 0.809 0.5878 -89.9007 107.2477)" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="14.8" height="13.2"/>
+	
+		<rect id="led_11" x="63.6" y="143" transform="matrix(0.5878 -0.809 0.809 0.5878 -91.7793 119.1091)" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="14.8" height="13.2"/>
+	
+		<rect id="led_10" x="74.3" y="150.8" transform="matrix(0.5878 -0.809 0.809 0.5878 -93.658 130.9706)" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="14.8" height="13.2"/>
+	
+		<rect id="led_9" x="85" y="158.6" transform="matrix(0.5878 -0.809 0.809 0.5878 -95.5367 142.832)" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="14.8" height="13.2"/>
+	
+		<rect id="led_8" x="91.8" y="176.2" transform="matrix(0.309 -0.9511 0.9511 0.309 -106.64 220.4417)" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="13.2" height="14.8"/>
+	
+		<rect id="led_7" x="87.7" y="188.8" transform="matrix(0.309 -0.9511 0.9511 0.309 -121.4276 225.2464)" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="13.2" height="14.8"/>
+	
+		<rect id="led_6" x="83.6" y="201.4" transform="matrix(0.309 -0.9511 0.9511 0.309 -136.2151 230.0512)" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="13.2" height="14.8"/>
+	
+		<rect id="led_5" x="79.5" y="214" transform="matrix(0.309 -0.9511 0.9511 0.309 -151.0026 234.8559)" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="13.2" height="14.8"/>
+	
+		<rect id="led_4" x="75.4" y="226.5" transform="matrix(0.309 -0.9511 0.9511 0.309 -165.7901 239.6607)" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="13.2" height="14.8"/>
+	
+		<rect id="led_3" x="90.1" y="237.2" transform="matrix(0.809 -0.5878 0.5878 0.809 -125.2968 103.5647)" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="13.2" height="14.8"/>
+	
+		<rect id="led_2" x="100.8" y="229.4" transform="matrix(0.809 -0.5878 0.5878 0.809 -118.6836 108.3695)" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="13.2" height="14.8"/>
+	
+		<rect id="led_1" x="111.5" y="221.7" transform="matrix(0.809 -0.5878 0.5878 0.809 -112.0704 113.1742)" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="13.2" height="14.8"/>
+	
+		<rect id="led_0" x="122.2" y="213.9" transform="matrix(0.809 -0.5878 0.5878 0.809 -105.4572 117.979)" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" width="13.2" height="14.8"/>
+</g>
+</svg>

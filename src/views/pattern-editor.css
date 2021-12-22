@@ -1,0 +1,139 @@
+pattern-editor {
+  position: absolute;
+  bottom: -100%;
+  height: calc(100% - 75px);
+  transition: bottom .4s;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  background: #101010;
+  display: flex;
+  flex-direction: column;
+}
+
+pattern-editor.show {
+  bottom: 0;
+}
+
+pattern-editor .title {
+  display: flex;
+  align-items: center;
+  opacity: .75;
+  margin-bottom: 30px;
+}
+
+pattern-editor .title h1 {
+  flex-grow: 1;
+  font-size: 1.3rem;
+  padding: 0;
+  margin: 0;
+}
+
+pattern-editor .title ion-icon {
+  font-size: 1.9rem;
+}
+
+pattern-editor h4 {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 8px;
+  font-weight: 300;
+}
+
+pattern-editor .input-container,
+pattern-editor :not(.input-container) input,
+pattern-editor select {
+  background: #181818;
+  color: white;
+  border: 1px solid #303030;
+  padding: 10px;
+  width: 100%;
+  outline: none;
+  border-radius: 3px;
+  box-sizing: border-box;
+  height:45px;
+}
+
+pattern-editor select option {
+    background: #151515;
+}
+
+pattern-editor .properties {
+  margin-top: 20px;
+  flex-grow: 1;
+  overflow: auto;
+  margin-bottom:20px;
+}
+
+pattern-editor .properties > *:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+pattern-editor .input-container {
+  display: flex;
+  box-sizing: border-box;
+  padding: 0;
+  align-items: center;
+}
+
+pattern-editor .row {
+  display: flex;
+  box-sizing: border-box;
+  padding: 0;
+  align-items: center;
+  width: 100%;
+}
+
+pattern-editor [multiple] .input-container {
+  display: block;
+  height: auto;
+}
+
+pattern-editor .input-container input {
+  all: unset;
+  background: transparent;
+  flex-grow: 1;
+  padding: 10px;
+}
+
+pattern-editor .input-container ion-icon {
+  margin-left: 10px;
+  font-size: 1.2em;
+}
+
+pattern-editor .input-container .row ion-icon.delete {
+  color: #ce675f;
+}
+
+pattern-editor input[type="color"] {
+  height: 40px;
+  padding: 0;
+  margin: 0;
+}
+
+pattern-editor input[type="color"] {
+	-webkit-appearance: none;
+  border-radius: 100px;
+  border: none;
+}
+pattern-editor input[type="color"]::-webkit-color-swatch-wrapper {
+	border-radius: 100px;
+  border: none;
+}
+pattern-editor input[type="color"]::-webkit-color-swatch {
+	border-radius: 100px;
+  margin:5px;
+  border: none;
+  box-sizing: border-box;
+}
+
+pattern-editor .add-multiple {
+  text-align: center;
+  padding: 10px 0;
+  border: 1px solid #303030;
+  border-top: 0;
+}

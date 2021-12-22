@@ -1,0 +1,37 @@
+device-connected {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+device-connected content {
+  height: 100%;
+  padding: 0 20px 20px 20px;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  box-sizing: border-box;
+  gap: 20px;
+}
+
+device-connected footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: black;
+  border-radius: 100px;
+}
+
+device-connected footer ion-icon {
+  font-size: 1.5em;
+}
+
+device-connected footer > * {
+  flex-grow: 1;
+  padding: 15px 20px;
+}
+
+device-connected footer > *.active ion-icon {
+  color: var(--accent-5);
+}

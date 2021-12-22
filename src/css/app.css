@@ -1,4 +1,134 @@
+:root {
+  --accent-5: #6253C6;
+  --accent-5+: #6E5EDC;
+  --accent-5-: #5E50BC;
+}
+
 html, body {
-  background: #303030;
+  background: #151515;
   color: white;
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', system-ui;
+}
+
+.box {
+  background-color: #202020;
+  border-radius: 30px;
+  border: 1px solid #252525;
+  box-sizing: border-box;
+}
+
+
+.spinner {
+  display: inline-block;
+  --spinner-size: 20px;
+  --spinner-border-width: 3px;
+  --spinner-speed: 1.2s;
+  --border-color: white;
+}
+
+.spinner.hide {
+  visibility: none;
+}
+
+.spinner:after {
+  content: " ";
+  display: block;
+  width: var(--spinner-size);
+  height: var(--spinner-size);
+  border-radius: 50%;
+  border: var(--spinner-border-width) solid var(--border-color);
+  border-color: var(--border-color) transparent var(--border-color) transparent;
+  animation: spinner var(--spinner-speed) linear infinite;
+  box-sizing: border-box;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.msg {
+  padding: 10px;
+  background: #303030;
+  color:white;
+  border-radius: 100px;
+  text-align: center;
+}
+
+.msg.error {
+  background: #F36F5A;
+}
+
+.button {
+  padding:15px;
+  font-size: 1.125em;
+  color: white;
+  background: #303030;
+  text-transform: uppercase;
+  border-radius: 100px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  font-weight: bold;
+}
+
+.button[color=accent] {
+  color: white;
+  background: var(--accent-5);
+}
+
+.button[color=accent]:hover,
+.button[hover=accent]:hover {
+  background: var(--accent-5+);
+}
+
+.button[color=subtle-light] {
+  color: white;
+  background: rgba(255,255,255,.1);
+}
+
+.button[color=subtle-light]:hover,
+.button[hover=subtle-light]:hover {
+  background: rgba(255,255,255,.12);
+}
+
+
+.button[color=subtle-dark] {
+  color: white;
+  background: rgba(0,0,0,.1);
+}
+
+.button[color=subtle-dark]:hover,
+.button[hover=subtle-dark]:hover {
+  background: rgba(0,0,0,.12);
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  background: transparent;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
 }
