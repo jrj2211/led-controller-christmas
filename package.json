@@ -8,8 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "android": "webpack --mode development && npx cap sync android & npx cap open android",
-    "serve": "npx webpack serve  --mode development "
+    "android": "webpack --mode production && npx cap sync android & npx cap open android",
+    "serve": "npx webpack serve  --mode development"
   },
   "author": "",
   "license": "ISC",

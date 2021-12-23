@@ -137,3 +137,26 @@ pattern-editor .add-multiple {
   border: 1px solid #303030;
   border-top: 0;
 }
+
+pattern-editor .buttons {
+  display: flex;
+  gap: 15px;
+}
+
+pattern-editor .buttons .button {
+  height: 50px;
+}
+
+pattern-editor .buttons .button.square {
+  height: 50px;
+  width: 50px;
+  flex-shrink: 0;
+}
+
+pattern-editor .button[action=delete] {
+  display: none;
+}
+
+pattern-editor[editing] .button[action=delete] {
+  display: block;
+}

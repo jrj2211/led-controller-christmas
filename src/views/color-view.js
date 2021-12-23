@@ -23,9 +23,15 @@ export default class ColorView extends HTMLElement {
       </div>
     `;
 
+    this.hue = 0;
+    this.brightness = 1;
+    this.saturation = 1;
+
     this.colorWheel = this.querySelector('.color-wheel');
     this.selected = this.colorWheel.querySelector('.selected');
     this.brightnessInput = this.querySelector('input[type=range]');
+
+    this.brightnessInput.value = this.brightness * 100;
   }
 
   connectedCallback() {
@@ -76,8 +82,8 @@ export default class ColorView extends HTMLElement {
       this.debounce = true;
       setTimeout(() => {
         this.debounce = false;
-        App.services.led.setEffect(1, LedService.EFFECT.SOLID_COLOR, 0, this.hue16, this.saturation255, this.brightness255);
-      }, 50);
+        App.services.led.setColor(1, this.hue16, this.saturation255, this.brightness255);
+      }, 65);
     }
   }
 

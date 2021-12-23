@@ -61,7 +61,7 @@ export default class DeviceConnected extends HTMLElement {
 
   static tabs = {
     color: {icon: 'svg/color-filter-outline.svg', view: ColorView},
-    pattern: {icon: 'svg/list-outline.svg', view: PatternView},
+    pattern: {icon: 'svg/color-filter-outline.svg', view: PatternView},
   }
 
   static defaultTab = 'color';

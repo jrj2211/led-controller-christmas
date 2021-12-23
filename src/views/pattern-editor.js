@@ -19,12 +19,16 @@ export default class PatternEditor extends HTMLElement {
         </select>
       </label>
       <div class='properties'></div>
-      <div class='button' action='save' color='accent'>Add Step</div>
+      <div class='buttons'>
+        <div class='button square' action='delete' color='subtle'><ion-icon src='svg/trash-outline.svg'></ion-icon></div>
+        <div class='button' action='save' color='accent'>Add Step</div>
+      </div>
     `;
 
     this.buttons = {
       close: this.querySelector('ion-icon[action=close]'),
       save: this.querySelector('.button[action=save]'),
+      delete: this.querySelector('.button[action=delete]'),
     }
 
     this.effectSelector = this.querySelector('select[name=effect]');
@@ -36,20 +40,35 @@ export default class PatternEditor extends HTMLElement {
       option.innerText = effects[name].label;
       this.effectSelector.append(option);
     }
+
+    this.close = this.close.bind(this);
+    this.onSave = this.onSave.bind(this);
+    this.onDelete = this.onDelete.bind(this);
+    this.onChangeEffect = this.onChangeEffect.bind(this);
   }
 
   connectedCallback() {
-    this.buttons.save.addEventListener('click', this.onSave.bind(this));
-    this.buttons.close.addEventListener('click', this.close.bind(this));
+    this.buttons.close.addEventListener('click', this.close);
+    this.buttons.save.addEventListener('click', this.onSave);
+    this.buttons.delete.addEventListener('click', this.onDelete);
     this.effectSelector.addEventListener('change', this.onChangeEffect.bind(this));
+  }
+
+  disconnectedCallback() {
+    this.buttons.close.removeEventListener('click', this.close);
+    this.buttons.save.removeEventListener('click', this.onSave);
+    this.buttons.delete.removeEventListener('click', this.onDelete);
+    this.effectSelector.removeEventListener('change', this.onChangeEffect.bind(this));
   }
 
   open(step) {
     this.step = step;
 
     if(step) {
+      this.setAttribute('editing', true);
       this.setEffect(step.info.name, step.info.properties);
     } else {
+      this.removeAttribute('editing');
       this.setEffect();
     }
 
@@ -67,8 +86,13 @@ export default class PatternEditor extends HTMLElement {
     properties.innerHTML = '';
 
     if(name) {
-      this.effectSelector.value = name;
+      this.buttons.save.setAttribute('color', 'accent');
+    } else {
+      this.buttons.save.setAttribute('color', 'subtle');
+    }
 
+    if(name) {
+      this.effectSelector.value = name;
 
       if(name in effects) {
         const form = effects[name];
@@ -108,7 +132,16 @@ export default class PatternEditor extends HTMLElement {
       };
 
       for(let i = 0; i < numInputs; i++) {
-        el.querySelector('.input-container').append(this.createInput(info, value?.[i]));
+        const min = (info.multiple?.min || 0);
+
+        const inputInfo = { ...info };
+
+        if(i >= min) {
+          inputInfo.icon = 'svg/trash-outline.svg';
+          inputInfo.deletable = true;
+        }
+
+        el.querySelector('.input-container').append(this.createInput(inputInfo, value?.[i]));
       }
     } else {
       el.querySelector('.input-container').append(this.createInput(info, value));
@@ -153,7 +186,7 @@ export default class PatternEditor extends HTMLElement {
     return row;
   }
 
-  getStepFromEditor() {
+  getStep() {
     const name = this.effectSelector.value;
 
     const step = {
@@ -164,9 +197,6 @@ export default class PatternEditor extends HTMLElement {
 
     this.querySelectorAll('.properties input').forEach((item, i) => {
       let value = item.value;
-      if(typeof item.info.convert === 'function') {
-        value = item.info.convert(item.value);
-      }
 
       if(item.info.multiple) {
         if(Array.isArray(step.properties[item.getAttribute('name')]) === false) {
@@ -195,7 +225,7 @@ export default class PatternEditor extends HTMLElement {
     }
 
     step.classList.add('step');
-    step.info = this.getStepFromEditor();
+    step.info = this.getStep();
 
     step.innerHTML = `
       <ion-icon src='svg/reorder-two-outline.svg'></ion-icon>
@@ -224,6 +254,13 @@ export default class PatternEditor extends HTMLElement {
     }
 
     this.close();
+  }
+
+  onDelete() {
+    if(this.step) {
+      this.step.remove();
+      this.close();
+    }
   }
 }
 

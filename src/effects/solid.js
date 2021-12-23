@@ -1,33 +1,21 @@
-import Color from 'color';
+import * as common from 'effects/common';
 
 export default {
   label: 'Solid Color',
+  id: 2,
   properties: [
     {
-      name: 'color',
-      label: 'Color',
-      icon: 'svg/color-filter-outline.svg',
-      attrs: {
-        type: 'color',
-        value: '#000000',
-      },
-      expand: true,
+      ...common.color,
       multiple: {
         min: 1,
         max: 6,
       }
     },
     {
-      name: 'delay',
-      label: 'Delay (ms)',
-      icon: 'svg/timer-outline.svg',
-      attrs: {
-        type: 'number',
-        min: 1,
-        max: 100000,
-        value: 1000,
-      },
-      convert: Number.parseInt,
+      ...common.delay
+    },
+    {
+      ...common.repeat
     }
   ]
 }

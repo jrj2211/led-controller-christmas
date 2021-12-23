@@ -111,6 +111,16 @@ html, body {
   background: rgba(0,0,0,.12);
 }
 
+.button[color=red] {
+  color: white;
+  background: #ce675f;
+}
+
+.button[color=red]:hover,
+.button[hover=red]:hover {
+  background: #bc6058;
+}
+
 input[type=range] {
   -webkit-appearance: none;
   width: 100%;

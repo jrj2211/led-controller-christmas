@@ -10,8 +10,8 @@ import DeviceConnected from 'views/device-connected';
 const router = new Router({
   path: '',
   action: () => {
-    if(App.services.led.isConnected() === false) {
-      //return new ScannerView();
+    if(App.services.led.isConnected() === false && process.env.NODE_ENV === 'production') {
+      return new ScannerView();
     }
     return new DeviceConnected();
   },
