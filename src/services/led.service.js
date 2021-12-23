@@ -44,19 +44,15 @@ export default class LedService extends EventEmitter {
 
   async runPattern(strip, info) {
     await this.startPattern(strip);
-    console.log('Start pattern');
 
     for(let effect of info) {
       await this.sendEffect(effect.id);
-      console.log('Effect: ', effect.id);
 
       for(const property of effect.properties) {
         await this.sendProperty(property.id, property.value);
-        console.log('Effect: ', property.id, property.value);
       }
     }
 
-    console.log('end pattern')
     await this.endPattern();
   }
 
@@ -78,7 +74,7 @@ export default class LedService extends EventEmitter {
     var buffer = new ArrayBuffer(5);
     const dataView = new DataView(buffer);
     dataView.setUint8(0, id, true);
-    dataView.setUint32(0, value, true);
+    dataView.setUint32(1, value, true);
     await BleClient.write(this.device.deviceId, LedService.LED_SERVICE, LedService.EFFECT_PROPERTY_CHARACTERISTIC, dataView);
   }
 
