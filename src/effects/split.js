@@ -1,14 +1,14 @@
 import * as common from 'effects/common';
 
 export default {
-  label: 'Fade',
-  id: 3,
+  label: 'Split',
+  id: 10,
   properties: [
     {
       ...common.color,
       multiple: {
         min: 2,
-        max: 6,
+        max: 2,
       },
     },
     {
@@ -16,6 +16,6 @@ export default {
     },
     {
       ...common.repeat,
-    }
+    },
   ]
 }

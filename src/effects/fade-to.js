@@ -1,9 +1,12 @@
 import * as common from 'effects/common';
 
 export default {
-  label: 'Off',
-  id: 0,
+  label: 'Fade To',
+  id: 4,
   properties: [
+    {
+      ...common.color,
+    },
     {
       ...common.delay,
     },

@@ -9,13 +9,13 @@ export default {
       multiple: {
         min: 1,
         max: 6,
-      }
+      },
     },
     {
-      ...common.delay
+      ...common.delay,
     },
     {
-      ...common.repeat
+      ...common.repeat,
     }
   ]
 }

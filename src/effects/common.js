@@ -39,3 +39,30 @@ export const repeat = {
   },
   convert: Number.parseInt,
 };
+
+export const length = {
+  name: 'length',
+  id: 4,
+  label: 'Length',
+  icon: 'svg/ruler-outline.svg',
+  attrs: {
+    type: 'number',
+    min: 1,
+    value: 20,
+  },
+  convert: Number.parseInt,
+};
+
+export const variance = {
+  name: 'variance',
+  id: 5,
+  label: 'Variance',
+  icon: 'svg/options-outline.svg',
+  attrs: {
+    type: 'number',
+    min: 1,
+    max: 100,
+    value: 20,
+  },
+  convert: Number.parseInt,
+};

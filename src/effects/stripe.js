@@ -1,21 +1,26 @@
 import * as common from 'effects/common';
 
 export default {
-  label: 'Fade',
-  id: 3,
+  label: 'Stripe',
+  id: 7,
   properties: [
     {
       ...common.color,
       multiple: {
         min: 2,
-        max: 6,
+        max: 4,
       },
     },
     {
       ...common.delay,
     },
+
     {
       ...common.repeat,
-    }
+    },
+    {
+      ...common.length,
+      label: 'Width',
+    },
   ]
 }
