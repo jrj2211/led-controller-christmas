@@ -20,6 +20,10 @@ export default {
     {
       ...common.length,
       label: 'Width',
+      attrs: {
+        min: 1,
+        value: 2,
+      }
     },
   ]
 }

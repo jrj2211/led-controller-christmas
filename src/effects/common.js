@@ -7,7 +7,7 @@ export const color = {
   icon: 'svg/color-filter-outline.svg',
   attrs: {
     type: 'color',
-    value: '#000000',
+    value: '#FF0000',
   },
   convert: (value) => {
     return parseInt(value.replace(/#/i, ''), 16);
@@ -22,7 +22,7 @@ export const delay = {
   attrs: {
     type: 'number',
     min: 16,
-    value: 50,
+    value: 150,
   },
   convert: Number.parseInt,
 };
