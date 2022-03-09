@@ -1,0 +1,18 @@
+server-down-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20%;
+  text-align: center;
+}
+
+server-down-view h1  {
+  font-size: 1.5em;
+}
+
+
+server-down-view ion-icon  {
+  font-size: 8em;
+  margin-bottom: 25px;
+  color: red;
+}

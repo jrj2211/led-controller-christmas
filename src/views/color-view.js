@@ -44,27 +44,46 @@ export default class ColorView extends HTMLElement {
 
     this.colorWheel.addEventListener('touchmove', (evt) => {
       const touch = evt.touches[0];
-
-      const rect = this.colorWheel.getBoundingClientRect();
-      const width = rect.right - rect.left;
-      const height = rect.bottom - rect.top;
-      const centerX = rect.left + (width / 2);
-      const centerY = rect.top + (height / 2);
-
-      const x = touch.clientX - centerX
-      const y = touch.clientY - centerY;
-
-      const distance = Math.sqrt(x ** 2 + y ** 2);
-      const angle = Math.atan2(y, x) + Math.PI;
-
-      let saturation = (Math.abs(distance / ((width - 50) / 2)) - .5) * 2;
-      saturation = this.clamp(saturation, 0, 1);
-
-      this.saturation = saturation;
-      this.hue = this.radToDeg(angle);
-
-      this.update();
+      this.position(touch.clientX, touch.clientY);
     }, {passive: true});
+
+    this.colorWheel.addEventListener('mousedown', (evt) => {
+      this.addEventListener('mousemove', this.mouseMove, {passive: true});
+    });
+
+    document.body.addEventListener('mouseup', () => {
+      this.removeEventListener('mousemove', this.mouseMove);
+    });
+  }
+
+  mouseMove = (evt) => {
+    this.position(evt.clientX, evt.clientY);
+  }
+
+  disconnectedCallback() {
+    this.removeEventListener('mousemove', this.mouseMove);
+  }
+
+  position(inputX, inputY) {
+    const rect = this.colorWheel.getBoundingClientRect();
+    const width = rect.right - rect.left;
+    const height = rect.bottom - rect.top;
+    const centerX = rect.left + (width / 2);
+    const centerY = rect.top + (height / 2);
+
+    const x = inputX - centerX
+    const y = inputY - centerY;
+
+    const distance = Math.sqrt(x ** 2 + y ** 2);
+    const angle = Math.atan2(y, x) + Math.PI;
+
+    let saturation = (Math.abs(distance / ((width - 50) / 2)) - .5) * 2;
+    saturation = this.clamp(saturation, 0, 1);
+
+    this.saturation = saturation;
+    this.hue = this.radToDeg(angle);
+
+    this.update();
   }
 
   updateColor() {
@@ -83,7 +102,7 @@ export default class ColorView extends HTMLElement {
       setTimeout(() => {
         this.debounce = false;
         App.services.led.setColor(1, this.hue16, this.saturation255, this.brightness255);
-      }, 65);
+      }, 16);
     }
   }
 
