@@ -8,15 +8,16 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "android": "webpack --mode production && npx cap sync android & npx cap open android",
+    "android-studio": "webpack --mode production && npx cap sync android & npx cap open android",
+    "android": "webpack --mode production && npx cap sync android & npx cap run android",
     "serve": "npx webpack serve  --mode development"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@capacitor-community/bluetooth-le": "^1.6.0",
-    "@capacitor/android": "^3.3.3",
-    "@capacitor/core": "^3.3.3",
+    "@capacitor-community/bluetooth-le": "^3.1.1",
+    "@capacitor/android": "^5.0.0",
+    "@capacitor/core": "^5.0.0",
     "@fontsource/roboto": "^4.5.1",
     "color": "^4.1.0",
     "history-api": "^1.0.1",
@@ -28,7 +29,7 @@
     "url": "^0.11.0"
   },
   "devDependencies": {
-    "@capacitor/cli": "^3.3.3",
+    "@capacitor/cli": "^5.0.0",
     "babel-loader": "^8.2.3",
     "copy-webpack-plugin": "^10.2.0",
     "css-loader": "^6.5.1",

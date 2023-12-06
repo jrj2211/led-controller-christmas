@@ -1,8 +1,8 @@
-import App from 'app';
+import App from "app";
 
-import ScanResult from 'components/scan-result';
-import LayoutWithHeader from 'views/layout-with-header';
-import './scanner-view.css';
+import ScanResult from "components/scan-result";
+import LayoutWithHeader from "views/layout-with-header";
+import "./scanner-view.css";
 
 export default class ScannerView extends HTMLElement {
   constructor() {
@@ -23,21 +23,21 @@ export default class ScannerView extends HTMLElement {
       </div>
     `;
 
-    this.resultsEl = this.querySelector('.results');
-    this.stateEl = this.querySelector('.state');
+    this.resultsEl = this.querySelector(".results");
+    this.stateEl = this.querySelector(".state");
   }
 
   connectedCallback() {
     this.startScan();
 
-    this.addEventListener('click', async (evt) => {
-      const resultView = evt.target.closest('scan-result');
+    this.addEventListener("click", async (evt) => {
+      const resultView = evt.target.closest("scan-result");
 
-      if(resultView && resultView.device) {
+      if (resultView && resultView.device) {
         this.showConnecting(resultView.device.name);
         try {
-          await App.services.led.connect(resultView.device, {timeout: 5000});
-        } catch(err) {
+          await App.services.led.connect(resultView.device, { timeout: 5000 });
+        } catch (err) {
           this.setState(null);
           this.showError(err);
         }
@@ -49,10 +49,11 @@ export default class ScannerView extends HTMLElement {
     this.onStartScanning();
 
     try {
+      console.log(App, App.services);
       await App.services.led.scan((result) => {
         this.resultsEl.append(new ScanResult(result));
       }, this.onStopScanning.bind(this));
-    } catch(err) {
+    } catch (err) {
       // Show error message
       this.showError(err);
 
@@ -70,15 +71,15 @@ export default class ScannerView extends HTMLElement {
   }
 
   showRefresh() {
-    const button = document.createElement('div');
-    button.classList.add('button');
-    button.setAttribute('color', 'accent');
-    button.innerText = 'Refresh';
-    button.addEventListener('click', () => {
+    const button = document.createElement("div");
+    button.classList.add("button");
+    button.setAttribute("color", "accent");
+    button.innerText = "Refresh";
+    button.addEventListener("click", () => {
       this.startScan();
-    })
+    });
 
-    this.stateEl.innerHTML = '';
+    this.stateEl.innerHTML = "";
     this.stateEl.append(button);
   }
 
@@ -92,41 +93,41 @@ export default class ScannerView extends HTMLElement {
 
   onStartScanning() {
     // Set the state to scanning
-    this.setState('scanning');
+    this.setState("scanning");
 
     // Show loading spinner
     this.showSpinner();
 
     // Clear results view
-    this.resultsEl.innerHTML = '';
+    this.resultsEl.innerHTML = "";
   }
 
   showError(err) {
     // Remove previous errors
-    this.querySelectorAll('.msg').forEach((item, i) => {
+    this.querySelectorAll(".msg").forEach((item, i) => {
       item.remove();
     });
 
     // Show error message
-    const el = document.createElement('div');
-    el.classList.add('msg', 'error');
+    const el = document.createElement("div");
+    el.classList.add("msg", "error");
     el.innerText = err.toString();
     this.resultsEl.prepend(el);
   }
 
   showConnecting(name) {
     // Show spinner and name when connecting
-    this.setState('connecting');
-    this.querySelector('.connection .name').innerText = name;
+    this.setState("connecting");
+    this.querySelector(".connection .name").innerText = name;
   }
 
   setState(state) {
-    if(state) {
-      this.setAttribute('state', state);
+    if (state) {
+      this.setAttribute("state", state);
     } else {
-      this.removeAttribute('state');
+      this.removeAttribute("state");
     }
   }
 }
 
-customElements.define('scanner-view', ScannerView);
+customElements.define("scanner-view", ScannerView);

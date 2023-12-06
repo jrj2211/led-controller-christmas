@@ -10,14 +10,15 @@ pattern-view {
 
 pattern-view .header {
   background: #303030;
-  padding:15px;
+  padding: 15px;
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: auto 1fr;
   gap: 15px;
 }
 
 pattern-view .steps {
   flex-grow: 1;
+  overflow: scroll;
 }
 
 pattern-view .steps .step {
@@ -25,29 +26,42 @@ pattern-view .steps .step {
   align-items: center;
 }
 
-
 pattern-view .header .button {
   padding: 15px 25px;
 }
 
-pattern-view .steps:empty:before {
-  content: 'No steps added to pattern\A Click add to begin';
-  padding:40px;
+pattern-view .steps-empty {
+  padding: 30px;
   text-align: center;
-  white-space: pre-wrap;
-  display: block;
+  display: grid;
+  gap: 30px;
 }
 
+pattern-view .steps-empty .quick-actions {
+  display: grid;
+  gap: 15px;
+}
+
+pattern-view .steps-empty .get-started {
+  color: var(--accent-5);
+  font-size: 1.5em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+pattern-view .steps-empty .button {
+  text-transform: none !important;
+}
 
 pattern-view .step {
   display: flex;
   padding: 15px;
-  border-bottom: 1px solid rgba(255,255,255,.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-pattern-view .step ion-icon{
+pattern-view .step ion-icon {
   margin-right: 10px;
-  color: rgba(255,255,255,.6);
+  color: rgba(255, 255, 255, 0.6);
   font-size: 1.2em;
 }
 

@@ -1,6 +1,6 @@
-import effects from 'effects';
+import effects from "effects";
 
-import './pattern-editor.css';
+import "./pattern-editor.css";
 
 export default class PatternEditor extends HTMLElement {
   constructor() {
@@ -26,17 +26,17 @@ export default class PatternEditor extends HTMLElement {
     `;
 
     this.buttons = {
-      close: this.querySelector('ion-icon[action=close]'),
-      save: this.querySelector('.button[action=save]'),
-      delete: this.querySelector('.button[action=delete]'),
-    }
+      close: this.querySelector("ion-icon[action=close]"),
+      save: this.querySelector(".button[action=save]"),
+      delete: this.querySelector(".button[action=delete]"),
+    };
 
-    this.effectSelector = this.querySelector('select[name=effect]');
+    this.effectSelector = this.querySelector("select[name=effect]");
 
     // Add effects to the dropdown
-    for(let name in effects) {
-      const option = document.createElement('option');
-      option.setAttribute('value', name);
+    for (let name in effects) {
+      const option = document.createElement("option");
+      option.setAttribute("value", name);
       option.innerText = effects[name].label;
       this.effectSelector.append(option);
     }
@@ -48,53 +48,59 @@ export default class PatternEditor extends HTMLElement {
   }
 
   connectedCallback() {
-    this.buttons.close.addEventListener('click', this.close);
-    this.buttons.save.addEventListener('click', this.onSave);
-    this.buttons.delete.addEventListener('click', this.onDelete);
-    this.effectSelector.addEventListener('change', this.onChangeEffect.bind(this));
+    this.buttons.close.addEventListener("click", this.close);
+    this.buttons.save.addEventListener("click", this.onSave);
+    this.buttons.delete.addEventListener("click", this.onDelete);
+    this.effectSelector.addEventListener(
+      "change",
+      this.onChangeEffect.bind(this)
+    );
   }
 
   disconnectedCallback() {
-    this.buttons.close.removeEventListener('click', this.close);
-    this.buttons.save.removeEventListener('click', this.onSave);
-    this.buttons.delete.removeEventListener('click', this.onDelete);
-    this.effectSelector.removeEventListener('change', this.onChangeEffect.bind(this));
+    this.buttons.close.removeEventListener("click", this.close);
+    this.buttons.save.removeEventListener("click", this.onSave);
+    this.buttons.delete.removeEventListener("click", this.onDelete);
+    this.effectSelector.removeEventListener(
+      "change",
+      this.onChangeEffect.bind(this)
+    );
   }
 
   open(step) {
     this.step = step;
 
-    if(step) {
-      this.setAttribute('editing', true);
+    if (step) {
+      this.setAttribute("editing", true);
       this.setEffect(step.info.name, step.info.properties);
     } else {
-      this.removeAttribute('editing');
+      this.removeAttribute("editing");
       this.setEffect();
     }
 
-    this.buttons.save.innerText = (step ? 'Update' : 'Add') + ' Step';
-    this.classList.add('show');
+    this.buttons.save.innerText = (step ? "Update" : "Add") + " Step";
+    this.classList.add("show");
   }
 
   close() {
     this.step = null;
-    this.classList.remove('show');
+    this.classList.remove("show");
   }
 
   setEffect(name, values) {
-    const properties = this.querySelector('.properties');
-    properties.innerHTML = '';
+    const properties = this.querySelector(".properties");
+    properties.innerHTML = "";
 
-    if(name) {
-      this.buttons.save.setAttribute('color', 'accent');
+    if (name) {
+      this.buttons.save.setAttribute("color", "accent");
     } else {
-      this.buttons.save.setAttribute('color', 'subtle');
+      this.buttons.save.setAttribute("color", "subtle");
     }
 
-    if(name) {
+    if (name) {
       this.effectSelector.value = name;
 
-      if(name in effects) {
+      if (name in effects) {
         const form = effects[name];
 
         form.properties.forEach((input, i) => {
@@ -109,7 +115,7 @@ export default class PatternEditor extends HTMLElement {
   }
 
   createProperty(info, value) {
-    const el = document.createElement('div');
+    const el = document.createElement("div");
 
     el.innerHTML = `
       <h4>${info.label}</h4>
@@ -118,68 +124,89 @@ export default class PatternEditor extends HTMLElement {
 
     let numInputs = 1;
 
-    if(info.multiple) {
-      el.insertAdjacentHTML('beforeend', `<div class='add-multiple'>Add <ion-icon src='svg/add-outline.svg'></ion-icon></div>`);
-      el.setAttribute('multiple', true);
+    if (info.multiple) {
+      el.insertAdjacentHTML(
+        "beforeend",
+        `<div class='add-multiple'>Add <ion-icon src='svg/add-outline.svg'></ion-icon></div>`
+      );
+      el.setAttribute("multiple", true);
 
-      numInputs = value?.length || info.multiple?.initial || info.multiple?.min || 1;
+      numInputs =
+        value?.length || info.multiple?.initial || info.multiple?.min || 1;
 
-      el.querySelector('.add-multiple').onclick = () => {
-        if(el.querySelector('.input-container').children.length < (info.multiple?.max || Infinity)) {
-          const input = this.createInput({...info, 'icon': 'svg/trash-outline.svg', deletable: true});
-          el.querySelector('.input-container').append(input);
+      el.querySelector(".add-multiple").onclick = () => {
+        if (
+          el.querySelector(".input-container").children.length <
+          (info.multiple?.max || Infinity)
+        ) {
+          const input = this.createInput({
+            ...info,
+            icon: "svg/trash-outline.svg",
+            deletable: true,
+          });
+          el.querySelector(".input-container").append(input);
         }
       };
 
-      for(let i = 0; i < numInputs; i++) {
-        const min = (info.multiple?.min || 0);
+      for (let i = 0; i < numInputs; i++) {
+        const min = info.multiple?.min || 0;
 
         const inputInfo = { ...info };
 
-        if(i >= min) {
-          inputInfo.icon = 'svg/trash-outline.svg';
+        if (i >= min) {
+          inputInfo.icon = "svg/trash-outline.svg";
           inputInfo.deletable = true;
         }
 
-        el.querySelector('.input-container').append(this.createInput(inputInfo, value?.[i]));
+        el.querySelector(".input-container").append(
+          this.createInput(inputInfo, value?.[i])
+        );
       }
     } else {
-      el.querySelector('.input-container').append(this.createInput(info, value));
+      el.querySelector(".input-container").append(
+        this.createInput(info, value)
+      );
     }
 
     return el;
   }
 
   createInput(info, value) {
-    const row = document.createElement('div');
-    row.classList.add('row');
+    const row = document.createElement("div");
+    row.classList.add("row");
     row.innerHTML = `<input />`;
 
-    if(info.icon) {
-      row.insertAdjacentHTML('afterbegin', `<ion-icon src='${info.icon}'></ion-icon>`);
+    if (info.icon) {
+      row.insertAdjacentHTML(
+        "afterbegin",
+        `<ion-icon src='${info.icon}'></ion-icon>`
+      );
 
-      const icon = row.querySelector('ion-icon');
+      const icon = row.querySelector("ion-icon");
 
-      if(info.deletable) {
-        icon.classList.add('delete');
+      if (info.deletable) {
+        icon.classList.add("delete");
 
         icon.onclick = (evt) => {
-          if(evt.target.closest('.input-container').children.length > (info.multiple?.min || 0)) {
-            evt.target.closest('.row').remove();
+          if (
+            evt.target.closest(".input-container").children.length >
+            (info.multiple?.min || 0)
+          ) {
+            evt.target.closest(".row").remove();
           }
         };
       }
     }
 
-    const input = row.querySelector('input');
+    const input = row.querySelector("input");
     input.info = info;
-    input.setAttribute('name', info.name);
+    input.setAttribute("name", info.name);
 
-    for(const attr in info.attrs) {
+    for (const attr in info.attrs) {
       input.setAttribute(attr, info.attrs[attr]);
     }
 
-    if(value !== undefined) {
+    if (value !== undefined) {
       input.value = value;
     }
 
@@ -191,21 +218,22 @@ export default class PatternEditor extends HTMLElement {
 
     const step = {
       name,
-      effect: effects[name],
       properties: {},
     };
 
-    this.querySelectorAll('.properties input').forEach((item, i) => {
+    this.querySelectorAll(".properties input").forEach((item, i) => {
       let value = item.value;
 
-      if(item.info.multiple) {
-        if(Array.isArray(step.properties[item.getAttribute('name')]) === false) {
-          step.properties[item.getAttribute('name')] = [];
+      if (item.info.multiple) {
+        if (
+          Array.isArray(step.properties[item.getAttribute("name")]) === false
+        ) {
+          step.properties[item.getAttribute("name")] = [];
         }
 
-        step.properties[item.getAttribute('name')].push(value);
+        step.properties[item.getAttribute("name")].push(value);
       } else {
-        step.properties[item.getAttribute('name')] = value;
+        step.properties[item.getAttribute("name")] = value;
       }
     });
 
@@ -217,51 +245,28 @@ export default class PatternEditor extends HTMLElement {
   }
 
   onSave() {
-    let step = document.createElement('div');
+    const info = this.getStep();
+    const detail = { info, el: this.step };
 
-    if(this.step) {
-      step = this.step;
-      step.innerHTML = '';
-    }
-
-    step.classList.add('step');
-    step.info = this.getStep();
-
-    step.innerHTML = `
-      <ion-icon src='svg/reorder-two-outline.svg'></ion-icon>
-      <div>${step.info.effect.label}</div>
-    `;
-
-    let colorsEl = document.createElement('div');
-    colorsEl.classList.add('colors');
-
-    if(Array.isArray(step.info.properties.color)) {
-      step.info.properties.color.forEach((color, i) => {
-        colorsEl.insertAdjacentHTML('beforeend', `<div class='color' style='background: ${color};'></div>`);
-      });
-    } else if(step.info.properties.color) {
-      colorsEl.insertAdjacentHTML('beforeend', `<div class='color' style='background: ${step.info.properties.color};'></div>`);
-    }
-
-    step.onclick = () => {
-      this.open(step);
-    }
-
-    step.append(colorsEl);
-
-    if(!this.step) {
-      this.dispatchEvent(new CustomEvent('step.add', { detail: step}));
+    if (!this.step) {
+      this.dispatchEvent(
+        new CustomEvent("step.save", { detail: { ...detail, type: "add" } })
+      );
+    } else {
+      this.dispatchEvent(
+        new CustomEvent("step.save", { detail: { ...detail, type: "update" } })
+      );
     }
 
     this.close();
   }
 
   onDelete() {
-    if(this.step) {
+    if (this.step) {
       this.step.remove();
       this.close();
     }
   }
 }
 
-customElements.define('pattern-editor', PatternEditor);
+customElements.define("pattern-editor", PatternEditor);

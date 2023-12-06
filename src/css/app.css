@@ -1,15 +1,16 @@
 :root {
-  --accent-5: #6253C6;
-  --accent-5+: #6E5EDC;
-  --accent-5-: #5E50BC;
+  --accent-5: #6253c6;
+  --accent-5l: #6e5edc;
+  --accent-5d: #5e50bc;
 }
 
-html, body {
+html,
+body {
   background: #151515;
   color: white;
   padding: 0;
   margin: 0;
-  font-family: 'Roboto', system-ui;
+  font-family: "Roboto", system-ui;
 }
 
 .box {
@@ -18,7 +19,6 @@ html, body {
   border: 1px solid #252525;
   box-sizing: border-box;
 }
-
 
 .spinner {
   display: inline-block;
@@ -54,21 +54,20 @@ html, body {
   }
 }
 
-
 .msg {
   padding: 10px;
   background: #303030;
-  color:white;
+  color: white;
   border-radius: 100px;
   text-align: center;
 }
 
 .msg.error {
-  background: #F36F5A;
+  background: #f36f5a;
 }
 
 .button {
-  padding:15px;
+  padding: 15px;
   font-size: 1.125em;
   color: white;
   background: #303030;
@@ -78,64 +77,76 @@ html, body {
   box-sizing: border-box;
   text-align: center;
   font-weight: bold;
+  transition: outline 0.1s ease-in;
+  position: relative;
+  user-select: none;
 }
 
-.button[color=accent] {
+.button:active {
+  outline: 8px solid color-mix(in srgb, var(--active-color) 30%, transparent) !important;
+}
+
+.button[color="accent"] {
+  --active-color: var(--accent-5l);
   color: white;
   background: var(--accent-5);
+  outline: 0 solid color-mix(in srgb, var(--active-color) 100%, transparent);
 }
 
-.button[color=accent]:hover,
-.button[hover=accent]:hover {
-  background: var(--accent-5+);
+@media (hover: hover) {
+  .button[color="accent"]:hover,
+  .button[hover="accent"]:hover {
+    background: var(--active-color);
+  }
+
+  .button[color="subtle-light"]:hover,
+  .button[hover="subtle-light"]:hover {
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  .button[color="subtle-dark"]:hover,
+  .button[hover="subtle-dark"]:hover {
+    background: rgba(0, 0, 0, 0.12);
+  }
+
+  .button[color="red"]:hover,
+  .button[hover="red"]:hover {
+    background: #bc6058;
+  }
 }
 
-.button[color=subtle-light] {
+.button[color="subtle-light"] {
   color: white;
-  background: rgba(255,255,255,.1);
+  background: rgba(255, 255, 255, 0.1);
+  --active-color: rgba(255, 255, 255, 0.1);
 }
 
-.button[color=subtle-light]:hover,
-.button[hover=subtle-light]:hover {
-  background: rgba(255,255,255,.12);
-}
-
-
-.button[color=subtle-dark] {
+.button[color="subtle-dark"] {
   color: white;
-  background: rgba(0,0,0,.1);
+  background: rgba(0, 0, 0, 0.1);
+  --active-color: rgba(0, 0, 0, 0.1);
 }
 
-.button[color=subtle-dark]:hover,
-.button[hover=subtle-dark]:hover {
-  background: rgba(0,0,0,.12);
-}
-
-.button[color=red] {
+.button[color="red"] {
   color: white;
   background: #ce675f;
 }
 
-.button[color=red]:hover,
-.button[hover=red]:hover {
-  background: #bc6058;
-}
-
-input[type=range] {
+input[type="range"] {
   -webkit-appearance: none;
   width: 100%;
   background: transparent;
 }
 
-input[type=range]::-webkit-slider-thumb {
+input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
 }
 
-input[type=range]:focus {
+input[type="range"]:focus {
   outline: none;
 }
 
-input[type=range]::-ms-track {
+input[type="range"]::-ms-track {
   width: 100%;
   cursor: pointer;
   background: transparent;

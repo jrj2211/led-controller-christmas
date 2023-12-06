@@ -1,8 +1,7 @@
-import App from 'app';
-import Color from 'color';
-import LedService from 'services/led.service';
+import App from "app";
+import Color from "color";
 
-import './color-view.css';
+import "./color-view.css";
 
 export default class ColorView extends HTMLElement {
   constructor() {
@@ -27,9 +26,9 @@ export default class ColorView extends HTMLElement {
     this.brightness = 1;
     this.saturation = 1;
 
-    this.colorWheel = this.querySelector('.color-wheel');
-    this.selected = this.colorWheel.querySelector('.selected');
-    this.brightnessInput = this.querySelector('input[type=range]');
+    this.colorWheel = this.querySelector(".color-wheel");
+    this.selected = this.colorWheel.querySelector(".selected");
+    this.brightnessInput = this.querySelector("input[type=range]");
 
     this.brightnessInput.value = this.brightness * 100;
   }
@@ -37,47 +36,51 @@ export default class ColorView extends HTMLElement {
   connectedCallback() {
     this.updateColor();
 
-    this.brightnessInput.addEventListener('input', () => {
+    this.brightnessInput.addEventListener("input", () => {
       this.brightness = Number.parseFloat(this.brightnessInput.value) / 100;
       this.update();
     });
 
-    this.colorWheel.addEventListener('touchmove', (evt) => {
-      const touch = evt.touches[0];
-      this.position(touch.clientX, touch.clientY);
-    }, {passive: true});
+    this.colorWheel.addEventListener(
+      "touchmove",
+      (evt) => {
+        const touch = evt.touches[0];
+        this.position(touch.clientX, touch.clientY);
+      },
+      { passive: true }
+    );
 
-    this.colorWheel.addEventListener('mousedown', (evt) => {
-      this.addEventListener('mousemove', this.mouseMove, {passive: true});
+    this.colorWheel.addEventListener("mousedown", (evt) => {
+      this.addEventListener("mousemove", this.mouseMove, { passive: true });
     });
 
-    document.body.addEventListener('mouseup', () => {
-      this.removeEventListener('mousemove', this.mouseMove);
+    document.body.addEventListener("mouseup", () => {
+      this.removeEventListener("mousemove", this.mouseMove);
     });
   }
 
   mouseMove = (evt) => {
     this.position(evt.clientX, evt.clientY);
-  }
+  };
 
   disconnectedCallback() {
-    this.removeEventListener('mousemove', this.mouseMove);
+    this.removeEventListener("mousemove", this.mouseMove);
   }
 
   position(inputX, inputY) {
     const rect = this.colorWheel.getBoundingClientRect();
     const width = rect.right - rect.left;
     const height = rect.bottom - rect.top;
-    const centerX = rect.left + (width / 2);
-    const centerY = rect.top + (height / 2);
+    const centerX = rect.left + width / 2;
+    const centerY = rect.top + height / 2;
 
-    const x = inputX - centerX
+    const x = inputX - centerX;
     const y = inputY - centerY;
 
     const distance = Math.sqrt(x ** 2 + y ** 2);
     const angle = Math.atan2(y, x) + Math.PI;
 
-    let saturation = (Math.abs(distance / ((width - 50) / 2)) - .5) * 2;
+    let saturation = (Math.abs(distance / ((width - 50) / 2)) - 0.5) * 2;
     saturation = this.clamp(saturation, 0, 1);
 
     this.saturation = saturation;
@@ -87,22 +90,31 @@ export default class ColorView extends HTMLElement {
   }
 
   updateColor() {
-    const color = Color.hsv([this.hue, this.saturation * 100, this.brightness * 100]);
+    const color = Color.hsv([
+      this.hue,
+      this.saturation * 100,
+      this.brightness * 100,
+    ]);
     const colorBright = Color.hsv([this.hue, this.saturation * 100, 100]);
-    this.brightnessInput.style.setProperty('--color-bright', colorBright.hex());
-    this.brightnessInput.style.setProperty('--color', color.hex());
+    this.brightnessInput.style.setProperty("--color-bright", colorBright.hex());
+    this.brightnessInput.style.setProperty("--color", color.hex());
     this.selected.style.background = color.hex();
   }
 
   update() {
     this.updateColor();
 
-    if(this.debounce !== true) {
+    if (this.debounce !== true) {
       this.debounce = true;
       setTimeout(() => {
         this.debounce = false;
-        App.services.led.setColor(1, this.hue16, this.saturation255, this.brightness255);
-      }, 16);
+        App.services.led.setColor(
+          1,
+          this.hue16,
+          this.saturation255,
+          this.brightness255
+        );
+      }, 30);
     }
   }
 
@@ -118,18 +130,16 @@ export default class ColorView extends HTMLElement {
     return Math.round(this.saturation * 255);
   }
 
-  degToRad(degrees)
-  {
+  degToRad(degrees) {
     return degrees * (Math.PI / 180);
   }
 
-  radToDeg(radians)
-  {
+  radToDeg(radians) {
     return radians * (180 / Math.PI);
   }
 
-  scale (number, inMin, inMax, outMin, outMax) {
-    return (number - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
+  scale(number, inMin, inMax, outMin, outMax) {
+    return ((number - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
   }
 
   clamp(num, min, max) {
@@ -141,8 +151,8 @@ export default class ColorView extends HTMLElement {
   }
 
   randomHexColor() {
-    return Math.floor(Math.random()*16777215).toString(16)
+    return Math.floor(Math.random() * 16777215).toString(16);
   }
 }
 
-customElements.define('color-view', ColorView);
+customElements.define("color-view", ColorView);

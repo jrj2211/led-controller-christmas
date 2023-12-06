@@ -1,0 +1,834 @@
+[
+  {
+    "name": "trail",
+    "effect": {
+      "label": "Trail",
+      "id": 6,
+      "properties": [
+        {
+          "name": "color",
+          "id": 1,
+          "label": "Color",
+          "icon": "svg/color-filter-outline.svg",
+          "attrs": {
+            "type": "color",
+            "value": "#FF0000"
+          }
+        },
+        {
+          "name": "delay",
+          "id": 2,
+          "label": "Delay (ms)",
+          "icon": "svg/timer-outline.svg",
+          "attrs": {
+            "type": "number",
+            "min": 16,
+            "value": 150
+          }
+        },
+        {
+          "name": "repeat",
+          "id": 3,
+          "label": "Repeat",
+          "icon": "svg/sync-outline.svg",
+          "attrs": {
+            "type": "number",
+            "min": 1,
+            "value": 1
+          }
+        },
+        {
+          "name": "length",
+          "id": 4,
+          "label": "Length",
+          "icon": "svg/ruler-outline.svg",
+          "attrs": {
+            "type": "number",
+            "min": 1,
+            "value": 20,
+            "initial": 4
+          }
+        }
+      ]
+    },
+    "properties": {
+      "color": "#ff0000",
+      "delay": "60",
+      "repeat": "1",
+      "length": "30"
+    }
+  },
+  {
+    "name": "trail",
+    "effect": {
+      "label": "Trail",
+      "id": 6,
+      "properties": [
+        {
+          "name": "color",
+          "id": 1,
+          "label": "Color",
+          "icon": "svg/color-filter-outline.svg",
+          "attrs": {
+            "type": "color",
+            "value": "#FF0000"
+          }
+        },
+        {
+          "name": "delay",
+          "id": 2,
+          "label": "Delay (ms)",
+          "icon": "svg/timer-outline.svg",
+          "attrs": {
+            "type": "number",
+            "min": 16,
+            "value": 150
+          }
+        },
+        {
+          "name": "repeat",
+          "id": 3,
+          "label": "Repeat",
+          "icon": "svg/sync-outline.svg",
+          "attrs": {
+            "type": "number",
+            "min": 1,
+            "value": 1
+          }
+        },
+        {
+          "name": "length",
+          "id": 4,
+          "label": "Length",
+          "icon": "svg/ruler-outline.svg",
+          "attrs": {
+            "type": "number",
+            "min": 1,
+            "value": 20,
+            "initial": 4
+          }
+        }
+      ]
+    },
+    "properties": {
+      "color": "#ffffff",
+      "delay": "60",
+      "repeat": "1",
+      "length": "40"
+    }
+  },
+  {
+    "name": "trail",
+    "effect": {
+      "label": "Trail",
+      "id": 6,
+      "properties": [
+        {
+          "name": "color",
+          "id": 1,
+          "label": "Color",
+          "icon": "svg/color-filter-outline.svg",
+          "attrs": {
+            "type": "color",
+            "value": "#FF0000"
+          }
+        },
+        {
+          "name": "delay",
+          "id": 2,
+          "label": "Delay (ms)",
+          "icon": "svg/timer-outline.svg",
+          "attrs": {
+            "type": "number",
+            "min": 16,
+            "value": 150
+          }
+        },
+        {
+          "name": "repeat",
+          "id": 3,
+          "label": "Repeat",
+          "icon": "svg/sync-outline.svg",
+          "attrs": {
+            "type": "number",
+            "min": 1,
+            "value": 1
+          }
+        },
+        {
+          "name": "length",
+          "id": 4,
+          "label": "Length",
+          "icon": "svg/ruler-outline.svg",
+          "attrs": {
+            "type": "number",
+            "min": 1,
+            "value": 20,
+            "initial": 4
+          }
+        }
+      ]
+    },
+    "properties": {
+      "color": "#ff0000",
+      "delay": "60",
+      "repeat": "1",
+      "length": "40"
+    }
+  },
+  {
+    "name": "trail",
+    "effect": {
+      "label": "Trail",
+      "id": 6,
+      "properties": [
+        {
+          "name": "color",
+          "id": 1,
+          "label": "Color",
+          "icon": "svg/color-filter-outline.svg",
+          "attrs": {
+            "type": "color",
+            "value": "#FF0000"
+          }
+        },
+        {
+          "name": "delay",
+          "id": 2,
+          "label": "Delay (ms)",
+          "icon": "svg/timer-outline.svg",
+          "attrs": {
+            "type": "number",
+            "min": 16,
+            "value": 150
+          }
+        },
+        {
+          "name": "repeat",
+          "id": 3,
+          "label": "Repeat",
+          "icon": "svg/sync-outline.svg",
+          "attrs": {
+            "type": "number",
+            "min": 1,
+            "value": 1
+          }
+        },
+        {
+          "name": "length",
+          "id": 4,
+          "label": "Length",
+          "icon": "svg/ruler-outline.svg",
+          "attrs": {
+            "type": "number",
+            "min": 1,
+            "value": 20,
+            "initial": 4
+          }
+        }
+      ]
+    },
+    "properties": {
+      "color": "#ffffff",
+      "delay": "60",
+      "repeat": "1",
+      "length": "40"
+    }
+  },
+  {
+    "name": "rainbow",
+    "effect": {
+      "label": "Rainbow",
+      "id": 11,
+      "properties": [
+        {
+          "name": "delay",
+          "id": 2,
+          "label": "Delay (ms)",
+          "icon": "svg/timer-outline.svg",
+          "attrs": {
+            "type": "number",
+            "min": 16,
+            "value": 150
+          }
+        },
+        {
+          "name": "repeat",
+          "id": 3,
+          "label": "Repeat",
+          "icon": "svg/sync-outline.svg",
+          "attrs": {
+            "type": "number",
+            "min": 1,
+            "value": 1
+          }
+        }
+      ]
+    },
+    "properties": {
+      "delay": "2000",
+      "repeat": "3"
+    }
+  },
+  {
+    "name": "trail",
+    "effect": {
+      "label": "Trail",
+      "id": 6,
+      "properties": [
+        {
+          "name": "color",
+          "id": 1,
+          "label": "Color",
+          "icon": "svg/color-filter-outline.svg",
+          "attrs": {
+            "type": "color",
+            "value": "#FF0000"
+          }
+        },
+        {
+          "name": "delay",
+          "id": 2,
+          "label": "Delay (ms)",
+          "icon": "svg/timer-outline.svg",
+          "attrs": {
+            "type": "number",
+            "min": 16,
+            "value": 150
+          }
+        },
+        {
+          "name": "repeat",
+          "id": 3,
+          "label": "Repeat",
+          "icon": "svg/sync-outline.svg",
+          "attrs": {
+            "type": "number",
+            "min": 1,
+            "value": 1
+          }
+        },
+        {
+          "name": "length",
+          "id": 4,
+          "label": "Length",
+          "icon": "svg/ruler-outline.svg",
+          "attrs": {
+            "type": "number",
+            "min": 1,
+            "value": 20,
+            "initial": 4
+          }
+        }
+      ]
+    },
+    "properties": {
+      "color": "#ffff00",
+      "delay": "20",
+      "repeat": "4",
+      "length": "8"
+    }
+  },
+  {
+    "name": "split",
+    "effect": {
+      "label": "Split",
+      "id": 10,
+      "properties": [
+        {
+          "name": "color",
+          "id": 1,
+          "label": "Color",
+          "icon": "svg/color-filter-outline.svg",
+          "attrs": {
+            "type": "color",
+            "value": "#FF0000"
+          },
+          "multiple": {
+            "min": 2,
+            "max": 2
+          }
+        },
+        {
+          "name": "delay",
+          "id": 2,
+          "label": "Delay (ms)",
+          "icon": "svg/timer-outline.svg",
+          "attrs": {
+            "type": "number",
+            "min": 16,
+            "value": 150
+          }
+        },
+        {
+          "name": "repeat",
+          "id": 3,
+          "label": "Repeat",
+          "icon": "svg/sync-outline.svg",
+          "attrs": {
+            "type": "number",
+            "min": 1,
+            "value": 1
+          }
+        }
+      ]
+    },
+    "properties": {
+      "color": ["#ff0000", "#00ff00"],
+      "delay": "100",
+      "repeat": "1"
+    }
+  },
+  {
+    "name": "stripe",
+    "effect": {
+      "label": "Stripe",
+      "id": 7,
+      "properties": [
+        {
+          "name": "color",
+          "id": 1,
+          "label": "Color",
+          "icon": "svg/color-filter-outline.svg",
+          "attrs": {
+            "type": "color",
+            "value": "#FF0000"
+          },
+          "multiple": {
+            "min": 2,
+            "max": 4
+          }
+        },
+        {
+          "name": "delay",
+          "id": 2,
+          "label": "Delay (ms)",
+          "icon": "svg/timer-outline.svg",
+          "attrs": {
+            "type": "number",
+            "min": 16,
+            "value": 150
+          }
+        },
+        {
+          "name": "repeat",
+          "id": 3,
+          "label": "Repeat",
+          "icon": "svg/sync-outline.svg",
+          "attrs": {
+            "type": "number",
+            "min": 1,
+            "value": 1
+          }
+        },
+        {
+          "name": "length",
+          "id": 4,
+          "label": "Width",
+          "icon": "svg/ruler-outline.svg",
+          "attrs": {
+            "min": 1,
+            "value": 3
+          }
+        }
+      ]
+    },
+    "properties": {
+      "color": ["#ff0000", "#ffffff"],
+      "delay": "100",
+      "repeat": "6",
+      "length": "5"
+    }
+  },
+  {
+    "name": "fade",
+    "effect": {
+      "label": "Fade",
+      "id": 3,
+      "properties": [
+        {
+          "name": "color",
+          "id": 1,
+          "label": "Color",
+          "icon": "svg/color-filter-outline.svg",
+          "attrs": {
+            "type": "color",
+            "value": "#FF0000"
+          },
+          "multiple": {
+            "min": 2,
+            "max": 6
+          }
+        },
+        {
+          "name": "delay",
+          "id": 2,
+          "label": "Delay (ms)",
+          "icon": "svg/timer-outline.svg",
+          "attrs": {
+            "type": "number",
+            "min": 16,
+            "value": 150
+          }
+        },
+        {
+          "name": "repeat",
+          "id": 3,
+          "label": "Repeat",
+          "icon": "svg/sync-outline.svg",
+          "attrs": {
+            "type": "number",
+            "min": 1,
+            "value": 1
+          }
+        }
+      ]
+    },
+    "properties": {
+      "color": ["#ff0000", "#0000ff", "#ffffff"],
+      "delay": "2000",
+      "repeat": "1"
+    }
+  },
+  {
+    "name": "wipe",
+    "effect": {
+      "label": "Wipe",
+      "id": 5,
+      "properties": [
+        {
+          "name": "color",
+          "id": 1,
+          "label": "Color",
+          "icon": "svg/color-filter-outline.svg",
+          "attrs": {
+            "type": "color",
+            "value": "#FF0000"
+          }
+        },
+        {
+          "name": "delay",
+          "id": 2,
+          "label": "Delay (ms)",
+          "icon": "svg/timer-outline.svg",
+          "attrs": {
+            "type": "number",
+            "min": 16,
+            "value": 150
+          }
+        }
+      ]
+    },
+    "properties": {
+      "color": "#000000",
+      "delay": "30"
+    }
+  },
+  {
+    "name": "burst",
+    "effect": {
+      "label": "Burst",
+      "id": 8,
+      "properties": [
+        {
+          "name": "color",
+          "id": 1,
+          "label": "Color",
+          "icon": "svg/color-filter-outline.svg",
+          "attrs": {
+            "type": "color",
+            "value": "#FF0000"
+          },
+          "multiple": {
+            "min": 1,
+            "max": 5
+          }
+        },
+        {
+          "name": "delay",
+          "id": 2,
+          "label": "Delay (ms)",
+          "icon": "svg/timer-outline.svg",
+          "attrs": {
+            "type": "number",
+            "min": 16,
+            "value": 150
+          }
+        },
+        {
+          "name": "repeat",
+          "id": 3,
+          "label": "Repeat",
+          "icon": "svg/sync-outline.svg",
+          "attrs": {
+            "type": "number",
+            "min": 1,
+            "value": 1
+          }
+        },
+        {
+          "name": "length",
+          "id": 4,
+          "label": "Width",
+          "icon": "svg/ruler-outline.svg",
+          "attrs": {
+            "min": 1,
+            "value": 2
+          }
+        }
+      ]
+    },
+    "properties": {
+      "color": ["#ffffff"],
+      "delay": "60",
+      "repeat": "3",
+      "length": "2"
+    }
+  },
+  {
+    "name": "burst",
+    "effect": {
+      "label": "Burst",
+      "id": 8,
+      "properties": [
+        {
+          "name": "color",
+          "id": 1,
+          "label": "Color",
+          "icon": "svg/color-filter-outline.svg",
+          "attrs": {
+            "type": "color",
+            "value": "#FF0000"
+          },
+          "multiple": {
+            "min": 1,
+            "max": 5
+          }
+        },
+        {
+          "name": "delay",
+          "id": 2,
+          "label": "Delay (ms)",
+          "icon": "svg/timer-outline.svg",
+          "attrs": {
+            "type": "number",
+            "min": 16,
+            "value": 150
+          }
+        },
+        {
+          "name": "repeat",
+          "id": 3,
+          "label": "Repeat",
+          "icon": "svg/sync-outline.svg",
+          "attrs": {
+            "type": "number",
+            "min": 1,
+            "value": 1
+          }
+        },
+        {
+          "name": "length",
+          "id": 4,
+          "label": "Width",
+          "icon": "svg/ruler-outline.svg",
+          "attrs": {
+            "min": 1,
+            "value": 2
+          }
+        }
+      ]
+    },
+    "properties": {
+      "color": ["#ff4400"],
+      "delay": "60",
+      "repeat": "3",
+      "length": "2"
+    }
+  },
+  {
+    "name": "burst",
+    "effect": {
+      "label": "Burst",
+      "id": 8,
+      "properties": [
+        {
+          "name": "color",
+          "id": 1,
+          "label": "Color",
+          "icon": "svg/color-filter-outline.svg",
+          "attrs": {
+            "type": "color",
+            "value": "#FF0000"
+          },
+          "multiple": {
+            "min": 1,
+            "max": 5
+          }
+        },
+        {
+          "name": "delay",
+          "id": 2,
+          "label": "Delay (ms)",
+          "icon": "svg/timer-outline.svg",
+          "attrs": {
+            "type": "number",
+            "min": 16,
+            "value": 150
+          }
+        },
+        {
+          "name": "repeat",
+          "id": 3,
+          "label": "Repeat",
+          "icon": "svg/sync-outline.svg",
+          "attrs": {
+            "type": "number",
+            "min": 1,
+            "value": 1
+          }
+        },
+        {
+          "name": "length",
+          "id": 4,
+          "label": "Width",
+          "icon": "svg/ruler-outline.svg",
+          "attrs": {
+            "min": 1,
+            "value": 2
+          }
+        }
+      ]
+    },
+    "properties": {
+      "color": ["#ff0090"],
+      "delay": "60",
+      "repeat": "3",
+      "length": "2"
+    }
+  },
+  {
+    "name": "burst",
+    "effect": {
+      "label": "Burst",
+      "id": 8,
+      "properties": [
+        {
+          "name": "color",
+          "id": 1,
+          "label": "Color",
+          "icon": "svg/color-filter-outline.svg",
+          "attrs": {
+            "type": "color",
+            "value": "#FF0000"
+          },
+          "multiple": {
+            "min": 1,
+            "max": 5
+          }
+        },
+        {
+          "name": "delay",
+          "id": 2,
+          "label": "Delay (ms)",
+          "icon": "svg/timer-outline.svg",
+          "attrs": {
+            "type": "number",
+            "min": 16,
+            "value": 150
+          }
+        },
+        {
+          "name": "repeat",
+          "id": 3,
+          "label": "Repeat",
+          "icon": "svg/sync-outline.svg",
+          "attrs": {
+            "type": "number",
+            "min": 1,
+            "value": 1
+          }
+        },
+        {
+          "name": "length",
+          "id": 4,
+          "label": "Width",
+          "icon": "svg/ruler-outline.svg",
+          "attrs": {
+            "min": 1,
+            "value": 2
+          }
+        }
+      ]
+    },
+    "properties": {
+      "color": ["#8c00ff"],
+      "delay": "60",
+      "repeat": "3",
+      "length": "2"
+    }
+  },
+  {
+    "name": "twinkle",
+    "effect": {
+      "label": "Twinkle",
+      "id": 9,
+      "properties": [
+        {
+          "name": "color",
+          "id": 1,
+          "label": "Color",
+          "icon": "svg/color-filter-outline.svg",
+          "attrs": {
+            "type": "color",
+            "value": "#FF0000"
+          },
+          "multiple": {
+            "min": 1,
+            "max": 5
+          }
+        },
+        {
+          "name": "delay",
+          "id": 2,
+          "label": "Delay (ms)",
+          "icon": "svg/timer-outline.svg",
+          "attrs": {
+            "type": "number",
+            "min": 16,
+            "value": 150
+          }
+        },
+        {
+          "name": "repeat",
+          "id": 3,
+          "label": "Repeat",
+          "icon": "svg/sync-outline.svg",
+          "attrs": {
+            "type": "number",
+            "min": 1,
+            "value": 1
+          }
+        },
+        {
+          "name": "variance",
+          "id": 5,
+          "label": "Variance",
+          "icon": "svg/options-outline.svg",
+          "attrs": {
+            "type": "number",
+            "min": 1,
+            "max": 100,
+            "value": 20
+          }
+        }
+      ]
+    },
+    "properties": {
+      "color": ["#545454"],
+      "delay": "150",
+      "repeat": "30",
+      "variance": "80"
+    }
+  }
+]
