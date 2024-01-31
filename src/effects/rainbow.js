@@ -6,6 +6,10 @@ export default {
   properties: [
     {
       ...common.delay,
+      attrs: {
+        ...common.delay.attrs,
+        value: 3000,
+      },
     },
     {
       ...common.repeat,

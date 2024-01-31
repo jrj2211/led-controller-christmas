@@ -141,7 +141,7 @@ export default class PatternEditor extends HTMLElement {
           inputInfo.deletable = true;
         }
 
-        el.querySelector('.input-container').append(this.createInput(inputInfo, value?.[i]));
+        el.querySelector('.input-container').append(this.createInput(inputInfo, value?.[i], i));
       }
     } else {
       el.querySelector('.input-container').append(this.createInput(info, value));
@@ -150,7 +150,7 @@ export default class PatternEditor extends HTMLElement {
     return el;
   }
 
-  createInput(info, value) {
+  createInput(info, value, index) {
     const row = document.createElement('div');
     row.classList.add('row');
     row.innerHTML = `<input />`;
@@ -176,7 +176,15 @@ export default class PatternEditor extends HTMLElement {
     input.setAttribute('name', info.name);
 
     for(const attr in info.attrs) {
-      input.setAttribute(attr, info.attrs[attr]);
+      if(attr === 'value') {
+        if(Array.isArray(info.attrs[attr])) {
+          input.value = info.attrs[attr]?.[index] || info.attrs[attr];
+        } else {
+          input.value = info.attrs[attr];
+        }
+      } else {
+        input.setAttribute(attr, info.attrs[attr]);
+      }
     }
 
     if(value !== undefined) {
@@ -186,12 +194,11 @@ export default class PatternEditor extends HTMLElement {
     return row;
   }
 
-  getStep() {
+  getStepInfo() {
     const name = this.effectSelector.value;
 
     const step = {
       name,
-      effect: effects[name],
       properties: {},
     };
 
@@ -217,30 +224,39 @@ export default class PatternEditor extends HTMLElement {
   }
 
   onSave() {
-    let step = document.createElement('div');
+    let step = this.createStep(this.getStepInfo(), this.step);
 
-    if(this.step) {
-      step = this.step;
-      step.innerHTML = '';
+    if(!this.step) {
+      this.dispatchEvent(new CustomEvent('step.add', { detail: step}));
+    }
+
+    this.close();
+  }
+
+  createStep(info, step) {
+    if(!step) {
+      step = document.createElement('div');
     }
 
     step.classList.add('step');
-    step.info = this.getStep();
+    step.info = info;
+
+    const effect = effects[info.name];
 
     step.innerHTML = `
       <ion-icon src='svg/reorder-two-outline.svg'></ion-icon>
-      <div>${step.info.effect.label}</div>
+      <div>${effect.label}</div>
     `;
 
     let colorsEl = document.createElement('div');
     colorsEl.classList.add('colors');
 
-    if(Array.isArray(step.info.properties.color)) {
+    if(Array.isArray(info.properties.color)) {
       step.info.properties.color.forEach((color, i) => {
         colorsEl.insertAdjacentHTML('beforeend', `<div class='color' style='background: ${color};'></div>`);
       });
-    } else if(step.info.properties.color) {
-      colorsEl.insertAdjacentHTML('beforeend', `<div class='color' style='background: ${step.info.properties.color};'></div>`);
+    } else if(info.properties.color) {
+      colorsEl.insertAdjacentHTML('beforeend', `<div class='color' style='background: ${info.properties.color};'></div>`);
     }
 
     step.onclick = () => {
@@ -249,11 +265,7 @@ export default class PatternEditor extends HTMLElement {
 
     step.append(colorsEl);
 
-    if(!this.step) {
-      this.dispatchEvent(new CustomEvent('step.add', { detail: step}));
-    }
-
-    this.close();
+    return step;
   }
 
   onDelete() {
@@ -263,5 +275,7 @@ export default class PatternEditor extends HTMLElement {
     }
   }
 }
+
+PatternEditor.effects = effects;
 
 customElements.define('pattern-editor', PatternEditor);

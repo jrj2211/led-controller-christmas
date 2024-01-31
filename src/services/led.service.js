@@ -43,17 +43,19 @@ export default class LedService extends EventEmitter {
   }
 
   async runPattern(strip, info) {
-    await this.startPattern(strip);
+    if(this.device) {
+      await this.startPattern(strip);
 
-    for(let effect of info) {
-      await this.sendEffect(effect.id);
+      for(let effect of info) {
+        await this.sendEffect(effect.id);
 
-      for(const property of effect.properties) {
-        await this.sendProperty(property.id, property.value);
+        for(const property of effect.properties) {
+          await this.sendProperty(property.id, property.value);
+        }
       }
-    }
 
-    await this.endPattern();
+      await this.endPattern();
+    }
   }
 
   async startPattern(strip) {

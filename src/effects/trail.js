@@ -6,9 +6,17 @@ export default {
   properties: [
     {
       ...common.color,
+      attrs: {
+        ...common.color.attrs,
+        value: '#0000FF',
+      }
     },
     {
       ...common.delay,
+      attrs: {
+        ...common.delay.attrs,
+        value: 60,
+      }
     },
     {
       ...common.repeat,
@@ -17,7 +25,7 @@ export default {
       ...common.length,
       attrs: {
         ...common.length.attrs,
-        initial: 4,
+        value: 10,
       }
     },
   ]

@@ -13,6 +13,11 @@ export default {
     },
     {
       ...common.delay,
+      label: 'Total Time (ms)',
+      attrs: {
+        ...common.delay.attrs,
+        value: 2000,
+      }
     },
     {
       ...common.repeat,

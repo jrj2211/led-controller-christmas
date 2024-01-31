@@ -10,6 +10,13 @@ export default {
         min: 2,
         max: 4,
       },
+      attrs: {
+        ...common.color.attrs,
+        value: [
+          "#C50000",
+          "#606060",
+        ],
+      }
     },
     {
       ...common.delay,
@@ -22,6 +29,7 @@ export default {
       ...common.length,
       label: 'Width',
       attrs: {
+        ...common.length.attrs,
         min: 1,
         value: 3,
       }

@@ -14,9 +14,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/core": "^7.16.5",
     "@capacitor-community/bluetooth-le": "^1.6.0",
     "@capacitor/android": "^3.3.3",
     "@capacitor/core": "^3.3.3",
+    "@capacitor/storage": "^1.2.3",
     "@fontsource/roboto": "^4.5.1",
     "color": "^4.1.0",
     "history-api": "^1.0.1",

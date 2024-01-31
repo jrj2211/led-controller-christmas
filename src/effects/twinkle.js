@@ -6,19 +6,31 @@ export default {
   properties: [
     {
       ...common.color,
-      multiple: {
-        min: 1,
-        max: 5,
-      },
+      attrs: {
+        ...common.color.attrs,
+        value: '#726932',
+      }
     },
     {
       ...common.delay,
+      attrs: {
+        ...common.delay.attrs,
+        value: 500,
+      }
     },
     {
       ...common.repeat,
+      attrs: {
+        ...common.delay.repeat,
+        value: 10
+      }
     },
     {
       ...common.variance,
+      attrs: {
+        ...common.delay.variance,
+        value: 100,
+      }
     },
   ]
 }

@@ -13,6 +13,10 @@ export default {
     },
     {
       ...common.delay,
+      attrs: {
+        ...common.delay.attrs,
+        value: 50,
+      }
     },
     {
       ...common.repeat,

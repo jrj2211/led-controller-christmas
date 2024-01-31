@@ -1,0 +1,108 @@
+[
+  {
+    "name": "rainbow",
+    "properties": {
+      "delay": "3000",
+      "repeat": "1"
+    }
+  },
+  {
+    "name": "wipe",
+    "properties": {
+      "color": "#0000ff",
+      "delay": "50"
+    }
+  },
+  {
+    "name": "wipe",
+    "properties": {
+      "color": "#00ff00",
+      "delay": "50"
+    }
+  },
+  {
+    "name": "wipe",
+    "properties": {
+      "color": "#ff0000",
+      "delay": "50"
+    }
+  },
+  {
+    "name": "stripe",
+    "properties": {
+      "color": [
+        "#c50000",
+        "#606060"
+      ],
+      "delay": "150",
+      "repeat": "5",
+      "length": "3"
+    }
+  },
+  {
+    "name": "burst",
+    "properties": {
+      "color": [
+        "#c70000",
+        "#cc5200",
+        "#e8e117"
+      ],
+      "delay": "75",
+      "repeat": "2",
+      "length": "2"
+    }
+  },
+  {
+    "name": "trail",
+    "properties": {
+      "color": "#ffa200",
+      "delay": "60",
+      "repeat": "2",
+      "length": "10"
+    }
+  },
+  {
+    "name": "trail",
+    "properties": {
+      "color": "#ff00c8",
+      "delay": "60",
+      "repeat": "1",
+      "length": "20"
+    }
+  },
+  {
+    "name": "burst",
+    "properties": {
+      "color": [
+        "#003cc6",
+        "#6400cc",
+        "#7a0069"
+      ],
+      "delay": "50",
+      "repeat": "2",
+      "length": "1"
+    }
+  },
+  {
+    "name": "split",
+    "properties": {
+      "color": [
+        "#00ff1e",
+        "#ff0000"
+      ],
+      "delay": "50",
+      "repeat": "2"
+    }
+  },
+  {
+    "name": "fade",
+    "properties": {
+      "color": [
+        "#726932",
+        "#004cff"
+      ],
+      "delay": "2000",
+      "repeat": "1"
+    }
+  }
+]

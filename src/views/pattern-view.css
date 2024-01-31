@@ -30,14 +30,25 @@ pattern-view .header .button {
   padding: 15px 25px;
 }
 
-pattern-view .steps:empty:before {
-  content: 'No steps added to pattern\A Click add to begin';
-  padding:40px;
+pattern-view:not(.loading) .steps:empty+.reset {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
   text-align: center;
-  white-space: pre-wrap;
-  display: block;
 }
 
+pattern-view .steps:empty {
+  display: none;
+}
+
+pattern-view .reset {
+  display: none;
+  flex-grow: 1;
+}
+
+pattern-view .reset .hint {
+  flex-grow: 1;
+}
 
 pattern-view .step {
   display: flex;
